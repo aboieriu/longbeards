@@ -10,4 +10,21 @@ repositories {
 
 dependencies {
     compile 'com.google.guava:guava:19.0'
+    // Spring data
+    compile 'org.springframework.data:spring-data-jpa:1.10.1.RELEASE'
+
+    // hibernate
+    compile 'org.hibernate:hibernate-core:4.2.0.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.2.0.Final'
+    compile 'org.hibernate:hibernate-validator:4.2.0.Final'
+    compile 'org.javassist:javassist:3.17.1-GA'
+
+    //mysql
+    compile 'mysql:mysql-connector-java:5.1.38'
+    compile 'commons-dbcp:commons-dbcp:1.4'
+
+    // jackson
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.4'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-guava:2.7.4'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.7.4'
 }

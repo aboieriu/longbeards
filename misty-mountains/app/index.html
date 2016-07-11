@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MMMain">
+<head>
+    <meta charset="utf-8" />
+    <title>Misty Mountains</title>
+    <meta name="description" content="Mining tool" />
+    <meta name="keywords" content="beezer, wedding, planning" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <script src="../bower_components/angular/angular.js" ></script>
+</head>
+<body ng-controller="AppCtrl">
+<div class="app" id="app">
+    <div class="initial-loading-anim">
+
+    </div>
+    <div class="misty-mountains-game-base">
+        <div class="mm-head">
+            <div class="scoreboard">
+                <div class="score-value">
+                    {{score}}
+                </div>
+            </div>
+        </div>
+        <div class="mm-area">
+            <div class="mm-grid">
+                <div ng-repeat="row in map">
+                    <div ng-repeat="cell in row">
+                        <div class="tile" mm-tile>
+                            <div class="dirt"></div>
+                            <div class="coin" ng-show="cell.coin"></div>
+                            <div class="rubin" ng-show="cell.rubin"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="../bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="js/MMMain.js" ></script>
+<script src="js/MMMapGenerator.js" ></script>
+</body>
+</html>

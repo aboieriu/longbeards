@@ -1,6 +1,8 @@
 rootProject.name = 'longbeards'
 
 include 'core'
+include 'mm-master'
+include 'dwarves'
 
-include 'main-web'
+include 'treasure'
 

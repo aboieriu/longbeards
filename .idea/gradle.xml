@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/main-web" />
+            <option value="$PROJECT_DIR$/dwarves" />
+            <option value="$PROJECT_DIR$/mm-master" />
+            <option value="$PROJECT_DIR$/treasure" />
           </set>
         </option>
       </GradleProjectSettings>

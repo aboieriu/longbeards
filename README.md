@@ -13,7 +13,6 @@ For building the whole project you can simply run the following command in the r
 For building all necessary modules and quick starting the web app, navigate to "mm-master" module and run
 ```
 ../gradlew build && java -jar build/libs/misty-mountain-master-0.0.1.jar --server.port=9090
-
 ```
 #Starting up the Misty Mountains dwarfs (UI)
 For building the whole project you can simply run the following command in the root directory of the project

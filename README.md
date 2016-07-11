@@ -15,7 +15,7 @@ For building all necessary modules and quick starting the web app, navigate to "
 ../gradlew build && java -jar build/libs/misty-mountain-master-0.0.1.jar --server.port=9090
 ```
 #Starting up the Misty Mountains dwarfs (UI)
-For building the whole project you can simply run the following command in the root directory of the project
+For building the whole project you can simply run the following command in the root directory (misty-mountains) of the project
 ```
 bower install
 ```

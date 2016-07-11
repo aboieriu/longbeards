@@ -1,0 +1,6 @@
+rootProject.name = 'longbeards'
+
+include 'core'
+
+include 'main-web'
+

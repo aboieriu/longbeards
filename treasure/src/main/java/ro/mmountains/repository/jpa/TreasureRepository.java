@@ -37,4 +37,14 @@ public class TreasureRepository implements ITreasureRepository {
         }
         treasureJpa.saveAndFlush(eTreasure);
     }
+
+    public List<Treasure> getNewTreasures() {
+        List<ETreasure> treasures = treasureJpa.findByAcknowledgeFalse();
+        treasures.stream().forEach(treasure -> {
+            treasure.setAcknowledge(true);
+            treasureJpa.save(treasure);
+        });
+        treasureJpa.flush();
+        return treasures.stream().map(treasure -> treasure.convert()).collect(Collectors.toList());
+    }
 }

@@ -10,4 +10,5 @@ import java.util.List;
 public interface ITreasureAppService {
     List<TreasureView> getAll();
     void addTreasure(TreasureView treasureView);
+    List<TreasureView> getNewTreasures();
 }

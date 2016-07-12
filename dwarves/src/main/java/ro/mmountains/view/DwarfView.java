@@ -7,8 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by aboieriu on 7/12/16.
  */
 public class DwarfView {
-    private final long id;
-    private final String name;
+    private long id;
+    private String name;
+
+    public DwarfView(){};
 
     @JsonCreator
     public DwarfView(

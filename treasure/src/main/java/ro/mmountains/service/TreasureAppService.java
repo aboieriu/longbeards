@@ -34,6 +34,11 @@ public class TreasureAppService implements ITreasureAppService {
         }
     }
 
+    public List<TreasureView> getNewTreasures() {
+        List<Treasure> treasures = treasureApi.getNewTreasures();
+        return treasures.stream().map(treasure ->  treasureConverter.reverse(treasure)).collect(Collectors.toList());
+    }
+
     public ITreasureApi getTreasureApi() {
         return treasureApi;
     }

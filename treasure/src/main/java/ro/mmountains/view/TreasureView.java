@@ -1,7 +1,9 @@
 package ro.mmountains.view;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import ro.mmountains.domain.Dwarf;
+import ro.mmountains.domain.Treasure;
 
 /**
  * Created by aboieriu on 7/12/16.
@@ -16,8 +18,14 @@ public class TreasureView {
 
     private DwarfView dwarf;
 
+    public TreasureView(){};
+
     @JsonCreator
-    public TreasureView(long id, String type, long value, DwarfView dwarf) {
+    public TreasureView(
+            @JsonProperty("id") long id,
+            @JsonProperty("type")String type,
+            @JsonProperty("value")long value,
+            @JsonProperty("dwarf") DwarfView dwarf) {
         this.id = id;
         this.type = type;
         this.value = value;

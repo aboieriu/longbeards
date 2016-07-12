@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface IMessageRepository {
     List<Message> getAll();
+    void addMessage(Message message);
 }

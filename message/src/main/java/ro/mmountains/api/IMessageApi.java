@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface IMessageApi {
     List<Message> getAll();
+    void addMessage(Message message);
 }

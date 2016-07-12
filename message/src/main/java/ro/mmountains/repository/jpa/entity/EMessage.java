@@ -14,25 +14,26 @@ import javax.persistence.Table;
 @Table(name = "message")
 public class EMessage {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "content")
     private String content;
 
-    @Column(name = "read")
-    private Boolean read;
-
     public EMessage(){};
+
+    public EMessage(Message message){
+        this.id = message.getId();
+        this.content = message.getContent();
+    }
 
     public EMessage(long id, String content, Boolean read) {
         this.id = id;
         this.content = content;
-        this.read = read;
     }
 
     public Message convert() {
-        return new Message(this.id, this.content, this.read);
+        return new Message(this.id, this.content);
     }
 
     public long getId() {
@@ -51,11 +52,4 @@ public class EMessage {
         this.content = content;
     }
 
-    public Boolean getRead() {
-        return read;
-    }
-
-    public void setRead(Boolean read) {
-        this.read = read;
-    }
 }

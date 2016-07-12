@@ -23,6 +23,10 @@ public class TreasureApi implements ITreasureApi {
         return treasureRepository.getAll();
     }
 
+    public List<Treasure> getNewTreasures() {
+        return treasureRepository.getNewTreasures();
+    }
+
     public void addTreasure(Treasure treasure) {
         this.treasureRepository.addTreasure(treasure);
     }

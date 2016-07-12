@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import ro.mmountains.service.ITreasureAppService;
 import ro.mmountains.view.TreasureView;
@@ -25,7 +26,13 @@ public class TrasureService {
         return treasureAppService.getAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping("/new")
+    public List<TreasureView> getNewTreasures(){
+        return treasureAppService.getNewTreasures();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
     public void addTreasure(@RequestBody TreasureView treasureView) {
         treasureAppService.addTreasure(treasureView);
     }

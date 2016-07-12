@@ -1,6 +1,7 @@
 package ro.mmountains.view;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by aboieriu on 7/12/16.
@@ -10,13 +11,13 @@ public class MessageView {
 
     private final String content;
 
-    private final Boolean read;
 
     @JsonCreator
-    public MessageView(long id, String content, Boolean read) {
+    public MessageView(
+            @JsonProperty("id") long id,
+            @JsonProperty("content") String content) {
         this.id = id;
         this.content = content;
-        this.read = read;
     }
 
     public long getId() {
@@ -27,7 +28,4 @@ public class MessageView {
         return content;
     }
 
-    public Boolean getRead() {
-        return read;
-    }
 }

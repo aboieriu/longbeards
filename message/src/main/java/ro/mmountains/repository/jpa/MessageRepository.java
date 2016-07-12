@@ -22,4 +22,9 @@ public class MessageRepository implements IMessageRepository {
         List<EMessage> messages = messageJpa.findAll();
         return messages.stream().map(message -> message.convert()).collect(Collectors.toList());
     }
+
+    public void addMessage(Message message) {
+        EMessage eMessage = new EMessage(message);
+        messageJpa.saveAndFlush(eMessage);
+    }
 }

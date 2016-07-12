@@ -46,11 +46,12 @@ ENGINE = InnoDB;
 -- Table `mmountains`.`message`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mmountains`.`message` (
-  `id` INT NOT NULL COMMENT '',
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `content` VARCHAR(2000) NULL COMMENT '',
-  `read` INT NULL DEFAULT 0 COMMENT '',
+  `read` INT NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
+
 
 
 

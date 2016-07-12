@@ -25,4 +25,8 @@ public class MessageApi implements IMessageApi {
     public List<Message> getAll() {
         return messageRepository.getAll();
     }
+
+    public void addMessage(Message message){
+        this.messageRepository.addMessage(message);
+    }
 }

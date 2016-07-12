@@ -27,6 +27,13 @@ public class MessageAppService implements IMessageAppService {
         return messageList.stream().map(message -> messageConverter.reverse(message)).collect(Collectors.toList());
     }
 
+    public void addMessage(MessageView message) {
+        Message messageToAdd = messageConverter.forward(message);
+        if (messageToAdd != null) {
+            messageApi.addMessage(messageToAdd);
+        }
+    }
+
     public IMessageApi getMessageApi() {
         return messageApi;
     }

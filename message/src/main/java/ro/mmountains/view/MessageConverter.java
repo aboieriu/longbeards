@@ -11,6 +11,13 @@ public class MessageConverter {
         if (message == null) {
             return null;
         }
-        return new MessageView(message.getId(), message.getContent(), message.getRead());
+        return new MessageView(message.getId(), message.getContent());
+    }
+
+    public Message forward(MessageView messageView) {
+        if (messageView == null) {
+            return null;
+        }
+        return new Message(messageView.getId(), messageView.getContent());
     }
 }

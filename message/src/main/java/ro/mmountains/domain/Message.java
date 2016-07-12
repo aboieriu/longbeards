@@ -8,12 +8,9 @@ public class Message {
 
     private final String content;
 
-    private final Boolean read;
-
-    public Message(long id, String content, Boolean read) {
+    public Message(long id, String content) {
         this.id = id;
         this.content = content;
-        this.read = read;
     }
 
     public long getId() {
@@ -22,9 +19,5 @@ public class Message {
 
     public String getContent() {
         return content;
-    }
-
-    public Boolean getRead() {
-        return read;
     }
 }

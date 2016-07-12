@@ -34,6 +34,13 @@ public class ETreasure {
 
     public ETreasure(){}
 
+    public ETreasure(Treasure treasure) {
+        this.id = treasure.getId();
+        this.type = treasure.getType();
+        this.value = treasure.getValue();
+        this.acknowledge = treasure.getAcknowledge();
+    }
+
     public ETreasure(long id, String type, long value, Boolean acknowledge, EDwarf dwarf) {
         this.id = id;
         this.type = type;

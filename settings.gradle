@@ -1,8 +1,12 @@
 rootProject.name = 'longbeards'
 
 include 'core'
+
 include 'mm-master'
+
 include 'dwarves'
 
 include 'treasure'
+
+include 'message'
 

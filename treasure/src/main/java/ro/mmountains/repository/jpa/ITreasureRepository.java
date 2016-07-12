@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface ITreasureRepository {
     List<Treasure> getAll();
+    void addTreasure(Treasure treasure);
 }

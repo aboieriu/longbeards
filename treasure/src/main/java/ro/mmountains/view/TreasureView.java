@@ -1,5 +1,6 @@
 package ro.mmountains.view;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import ro.mmountains.domain.Dwarf;
 
 /**
@@ -15,6 +16,7 @@ public class TreasureView {
 
     private DwarfView dwarf;
 
+    @JsonCreator
     public TreasureView(long id, String type, long value, DwarfView dwarf) {
         this.id = id;
         this.type = type;

@@ -16,4 +16,11 @@ public class DwarfConverter {
         }
         return new DwarfView(dwarf.getId(), dwarf.getName());
     }
+
+    public Dwarf forward(DwarfView dwarfView) {
+        if (dwarfView == null) {
+            return null;
+        }
+        return new Dwarf(dwarfView.getId(), dwarfView.getName());
+    }
 }

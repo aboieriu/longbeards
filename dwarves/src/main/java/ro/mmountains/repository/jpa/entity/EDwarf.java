@@ -1,5 +1,7 @@
 package ro.mmountains.repository.jpa.entity;
 
+import ro.mmountains.domain.Dwarf;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,6 +21,11 @@ public class EDwarf {
     private String name;
 
     public EDwarf(){}
+
+    public EDwarf(Dwarf dwarf) {
+        this.id = dwarf.getId();
+        this.name = dwarf.getName();
+    }
 
     public EDwarf(long id, String name) {
         this.id = id;

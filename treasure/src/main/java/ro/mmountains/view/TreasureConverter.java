@@ -12,4 +12,11 @@ public class TreasureConverter {
     public TreasureView reverse(Treasure treasure) {
         return new TreasureView(treasure.getId(), treasure.getType(), treasure.getValue(), dwarfConverter.reverse(treasure.getDwarf()));
     }
+
+    public Treasure forward(TreasureView treasureView) {
+        if (treasureView == null) {
+            return null;
+        }
+        return new Treasure(treasureView.getId(), treasureView.getType(), treasureView.getValue(), false, dwarfConverter.forward(treasureView.getDwarf()));
+    }
 }

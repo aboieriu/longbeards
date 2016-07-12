@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ro.mmountains.api.ITreasureApi;
 import ro.mmountains.impl.TreasureApi;
+import ro.mmountains.repository.jpa.IDwarfRepository;
 import ro.mmountains.repository.jpa.ITreasureJpa;
 import ro.mmountains.repository.jpa.ITreasureRepository;
 import ro.mmountains.repository.jpa.TreasureRepository;
@@ -19,6 +20,9 @@ public class TreasureConfig {
     @Autowired
     private ITreasureJpa treasureJpa;
 
+    @Autowired
+    private IDwarfRepository dwarfRepository;
+
     @Bean
     public ITreasureAppService treasureAppService() {
         return new TreasureAppService(treasureApi());
@@ -31,7 +35,7 @@ public class TreasureConfig {
 
     @Bean
     public ITreasureRepository treasureRepository(){
-        return new TreasureRepository(treasureJpa);
+        return new TreasureRepository(treasureJpa, dwarfRepository);
     }
 
     public ITreasureJpa getTreasureJpa() {

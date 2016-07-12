@@ -24,6 +24,7 @@ dependencies {
     compile project(':core')
     compile project(':dwarves')
     compile project(':treasure')
+    compile project(':message')
     compile("org.springframework.boot:spring-boot-starter-web") {
         exclude module: "spring-boot-starter-tomcat"
     }

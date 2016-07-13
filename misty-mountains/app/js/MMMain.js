@@ -3,8 +3,10 @@
 /* Controllers */
 'use strict';
 var app = angular.module('MMMain', []);
+app.baseService = "http://localhost:9091/api";
+app.basePath = "http://localhost:9091/app";
 
-angular.module('MMMain').controller('AppCtrl', ['$scope', function($scope) {
+angular.module('MMMain').controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.score = 0;
 
     var settings = {
@@ -61,11 +63,47 @@ angular.module('MMMain').controller('AppCtrl', ['$scope', function($scope) {
     $scope.addScoreOnCoin = function(){
         $scope.score = $scope.score + settings.treasure.coin;
         $scope.$apply();
+        updateTreasureUpdateRequest('coin');
     };
     $scope.addScoreOnRubin = function(){
         $scope.score = $scope.score + settings.treasure.rubin;
         $scope.$apply();
+        updateTreasureUpdateRequest('rubin');
     };
+
+    $http.get(app.baseService + "/dwarves").then(function(response){
+        $scope.dwarves = response.data;
+    });
+
+    $scope.pickDwarf = function(dwarfId) {
+        for (var key in $scope.dwarves) {
+            var target = $scope.dwarves[key];
+            if (target.id == dwarfId) {
+                game.dwarf = target;
+            }
+        }
+        $scope.dwarves = null;
+    };
+
+    var updateTreasureUpdateRequest = function(type) {
+        if (game.dwarf) {
+            var treasure = {
+                "type": type,
+                "value": settings.treasure[type],
+                "dwarf": {
+                    "id": game.dwarf.id
+                }
+            }
+        }
+
+        $http({
+            url:app.baseService + "/treasure"
+            , method:'POST'
+            , data: treasure
+        });
+    }
+
+
 }]).directive('mmTile', ['$rootScope', function($rootScope) {
     return {
         link:function($scope, element){

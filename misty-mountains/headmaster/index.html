@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MMMain">
+<head>
+    <meta charset="utf-8" />
+    <title>Longbeards dwarves head master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <script src="../bower_components/angular/angular.js" ></script>
+    <script src="js/service-factory.js" ></script>
+    <script type="text/javascript">
+       var notificationWorker = registerServiceWorker('./notification-worker.js');
+    </script>
+</head>
+<body ng-controller="AppCtrl">
+<div class="app" id="app">
+    <div class="heading">
+        <img src="./img/headmaster.png" />
+    </div>
+    <div class="treasure">
+        <br />
+        Total treasure value: {{stats.total}}
+        <div class="stats">
+
+            <div class="treasure-type">
+                <img src="./img/coin.png" /><br />
+                Total coins : {{stats.coin.count}} <br />
+                Total coins value: {{stats.coin.value}}
+            </div>
+
+            <div class="treasure-type">
+                <img src="./img/rubin.png" /><br />
+                Total rubins : {{stats.rubin.count}}<br />
+                Total rubins value: {{stats.rubin.value}}
+            </div>
+        </div>
+
+        New Tresures
+        <hr>
+        <div class="treasure-item-container">
+            <div class="treasure-item" ng-repeat="treasureItem in newTreasures">
+                <div class="miner">{{treasureItem.dwarf.name}}</div>
+                <img ng-src="./img/{{treasureItem.type}}.png" />
+                <div class="value">{{treasureItem.value}}</div>
+            </div>
+        </div>
+
+        Already gathered treasures
+        <hr>
+        <div class="treasure-item-container">
+            <div class="treasure-item" ng-repeat="treasureItem in treasure">
+                <div class="miner">{{treasureItem.dwarf.name}}</div>
+                <img ng-src="./img/{{treasureItem.type}}.png" />
+                <div class="value">{{treasureItem.value}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../bower_components/jquery/dist/jquery.min.js" ></script>
+<script src="js/HeadmasterMain.js" ></script>
+</body>
+</html>

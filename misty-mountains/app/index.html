@@ -4,15 +4,29 @@
     <meta charset="utf-8" />
     <title>Misty Mountains</title>
     <meta name="description" content="Mining tool" />
-    <meta name="keywords" content="beezer, wedding, planning" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="css/app.css" type="text/css" />
     <script src="../bower_components/angular/angular.js" ></script>
+    <script src="js/service-factory.js" ></script>
+    <script type="text/javascript">
+        registerServiceWorker('./cache-worker.js');
+    </script>
 </head>
 <body ng-controller="AppCtrl">
 <div class="app" id="app">
     <div class="initial-loading-anim">
 
+    </div>
+    <div class="pick-dwarf-container" ng-show="dwarves">
+        <div class="dwarf-container">
+            <div class="label">Pick a dwarf</div>
+            <div class="dwarfs-list">
+                <div class="dwarf" ng-repeat="dwarf in dwarves" data-id="{{dwarf.id}}" ng-click="pickDwarf(dwarf.id)">
+                    <div class="label">{{dwarf.name}}</div>
+                    <img ng-src="./img/{{dwarf.name}}.png" />
+                </div>
+            </div>
+        </div>
     </div>
     <div class="misty-mountains-game-base">
         <div class="mm-head">
@@ -38,8 +52,6 @@
     </div>
 </div>
 <script src="../bower_components/jquery/dist/jquery.min.js" ></script>
-<script src="../bower_components/jquery/dist/jquery.min.js" ></script>
 <script src="js/MMMain.js" ></script>
-<script src="js/MMMapGenerator.js" ></script>
 </body>
 </html>

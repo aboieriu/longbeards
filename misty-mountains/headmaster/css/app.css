@@ -1,0 +1,73 @@
+body, html {
+    background-color:#b6e4fb;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.app {
+    width:100%;
+    height:100%;
+}
+
+.heading {
+    text-align:center;
+    width:100%;
+    height:60px;
+    overflow:visible;
+    background-color:#2e2e2c;
+}
+
+.heading > img {
+    width:80px;
+}
+
+.stats {
+    display:flex;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.treasure {
+    width:800px;
+    margin:40px auto;
+    background-color:white;
+    border-radius:15px;
+    padding:20px 10px 10px 10px;
+    text-align:center;
+}
+
+.treasure-type {
+    background-color:#f9f0ce;
+    flex-grow:1;
+    text-align:center;
+}
+
+.treasure-item-container {
+    display: flex;
+    padding:20px;
+    flex-wrap:wrap;
+}
+
+.treasure-item {
+    border-radius:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+}
+
+.treasure-item > img {
+    width:40px;
+}
+
+.miner {
+    background-color:#cacaca;
+    font-size:12px;
+}
+
+.value {
+    background-color:#cacaca;
+    font-size:10px;
+}

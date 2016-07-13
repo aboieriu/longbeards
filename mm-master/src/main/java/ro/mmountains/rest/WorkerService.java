@@ -24,8 +24,7 @@ public class WorkerService {
         return ResponseEntity
                 .ok()
                 .contentLength(file.contentLength())
-                .contentType(
-                        MediaType.parseMediaType("application/javascript"))
+                .contentType(MediaType.parseMediaType("application/javascript"))
                 .body(new InputStreamResource(file.getInputStream()));
     }
 }

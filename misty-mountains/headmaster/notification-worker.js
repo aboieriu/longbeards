@@ -16,8 +16,9 @@ var checkNotifications = function() {
                                 client.postMessage(JSON.stringify(newTreasures));
                             })
                         } else {
-                            self.registration.showNotification("Your dwarfs gathered new treasures", {
+                            self.registration.showNotification("Your dwarves gathered new treasures", {
                                 body: message
+                                , icon: 'http://localhost:9091/headmaster/img/treasure.jpg'
                             });
                         }
                     });
@@ -26,6 +27,7 @@ var checkNotifications = function() {
         }
     )
 };
+
 var getTreasureStats = function(data) {
     if (data) {
         var stats = {
